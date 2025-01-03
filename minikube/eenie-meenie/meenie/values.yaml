@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: meenie
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+}
