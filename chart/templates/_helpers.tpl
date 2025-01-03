@@ -1,13 +1,10 @@
-{{- define "nginx.name" -}}
-nginx
+
+{{- define "fullname" -}}
+{{ .Release.Name }}
 {{- end -}}
 
-{{- define "nginx.fullname" -}}
-{{ .Release.Name }}-nginx
-{{- end -}}
-
-{{- define "nginx.labels" -}}
-app.kubernetes.io/name: {{ include "nginx.name" . }}
+{{- define "labels" -}}
+app.kubernetes.io/name: {{ include "fullname" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/version: {{ .Chart.AppVersion }}
 app.kubernetes.io/managed-by: Helm
